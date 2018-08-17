@@ -1,0 +1,32 @@
+<h1 class='page-header'>New Goal</h1>
+
+
+<form class='form' action="<%= goals_url %>" method="post">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+  <input type="hidden" name="goal[user_id]" value=" <%= current_user.id %> ">
+
+  <p>
+    <label for='title'>Title</label>
+    <input id='title' type="text" name="goal[title]">
+  </p>
+
+  <p>
+    <label for='body'>Body</label>
+    <input id='body' type="text" name="goal[body]">
+  </p>
+
+  <p>
+    <label for='body'>Private?</label>
+    <input id='body' type='radio' value="false" name="goal[public]">
+  </p>
+
+  <p>
+    <label for='body'>Completed?</label>
+    <input id='body' type='radio' value="true" name="goal[complete]">
+  </p>
+
+  <input type="submit" value="Submit">
+</form>
